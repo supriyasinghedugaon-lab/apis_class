@@ -16,11 +16,11 @@ let arrayUser = [
     }
 ];
 
-app.get("/userData", (serverRequest, serverResponse) => {
+app.get("/fetchData", (serverRequest, serverResponse) => {
     serverResponse.status(200).json(arrayUser);
 });
 
-app.post("/newUserAdd", (userServerRequest, userServerResponse) => {//condtion lgana h ki koi bhi feild empty nahi rahna chahiye jo kis conditional statement ke help se hoga
+app.post("/addNewUser", (userServerRequest, userServerResponse) => {//condtion lgana h ki koi bhi feild empty nahi rahna chahiye jo kis conditional statement ke help se hoga
     const newData = userServerRequest.body;
     arrayUser.push(newData);
     userServerResponse.status(201).json(arrayUser);
